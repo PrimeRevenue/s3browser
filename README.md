@@ -1,6 +1,8 @@
 Amazon S3 Directory Browser
 ===========================
 
+Add support for Docker Secrets.  Mount s3 secret key to /run/secrets/s3secretkey
+
 Please report any issues [here on GitHub](https://github.com/powdahound/s3browser/issues).
 
 

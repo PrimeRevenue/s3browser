@@ -27,7 +27,8 @@ $c['s3-signed-url'] = getenv_default('S3_SIGNED_URL', false);
 
 // Amazon S3 access information
 $c['s3-access-key'] = getenv_default('S3_ACCESS_KEY');
-$c['s3-secret-key'] = getenv_default('S3_SECRET_KEY');
+$c['s3-docker-secret'] = file_get_contents("/run/secrets/s3secretkey");
+$c['s3-secret-key'] = getenv_default('S3_SECRET_KEY', $c['s3-docker-secret']);
 
 // Bucket information should be cached so your S3 account doesn't need to be queried for every user request. Default cache-time is 10 minutes.
 $c['cache-time'] = getenv_default('CACHE_TIME', 60 * 10);
